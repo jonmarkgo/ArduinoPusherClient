@@ -28,7 +28,7 @@ void setup() {
 
   wifiSerial.begin(57600);
   Serial.begin(9600);
-  if (!wifly.begin(&Serial, &wifiSerial)) {
+  if (!wifly.begin(&wifiSerial, &Serial)) {
     wifiSerial.println(F("Failed to start wifly"));
     wifly.terminal();
   }
